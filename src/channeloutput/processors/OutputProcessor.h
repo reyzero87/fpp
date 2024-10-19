@@ -31,7 +31,8 @@ public:
         COLORORDER,
         HOLDVALUE,
         THREETOFOUR,
-        OVERRIDEZERO
+        OVERRIDEZERO,
+        REYTEST
     };
 
     virtual OutputProcessorType getType() const { return UNKNOWN; }

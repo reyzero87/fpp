@@ -23,6 +23,7 @@
 #include "RemapOutputProcessor.h"
 #include "SetValueOutputProcessor.h"
 #include "ThreeToFourOutputProcessor.h"
+#include "ReyTestOutputProcessor.h"
 
 OutputProcessors::OutputProcessors() {
 }
@@ -95,6 +96,8 @@ OutputProcessor* OutputProcessors::create(const Json::Value& config) {
         return new ThreeToFourOutputProcessor(config);
     } else if (type == "Override Zero") {
         return new OverrideZeroOutputProcessor(config);
+    } else if (type == "ReyTest") {
+        return new ReyTestOutputProcessor(config);
     } else {
         LogErr(VB_CHANNELOUT, "Unknown OutputProcessor type: %s\n", type.c_str());
     }
